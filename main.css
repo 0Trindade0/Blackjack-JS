@@ -1,0 +1,113 @@
+@font-face {
+    font-family: sigma;
+    src: url();
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mantém o header no topo e os botões embaixo */
+    height: 100vh; /* Garante que ocupe toda a tela */
+    font-family: Arial, sans-serif;
+}
+
+.header
+{
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 18px;
+    width: 100%;
+
+}
+
+/* Container dos botões */
+.button-container {
+    display: flex;
+    justify-content: center; /* Centraliza os botões */
+    gap: 15px; /* Espaçamento entre os botões */
+    padding: 20px;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+}
+
+.page_elements
+{
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente (caso necessário) */
+   height: 100vh; /* Para centralizar na tela inteira, opcional */
+}
+
+.button {
+    appearance: button;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round,sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 15%;
+  }
+  
+  .button:after {
+    background-clip: padding-box;
+    background-color: #1CB0F6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+  
+  .button,
+  .button:focus {
+    user-select: auto;
+  }
+  
+  .button:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+  }
+  
+  .button:disabled {
+    cursor: auto;
+  }
+  
+  .button:active {
+    border-width: 4px 0 0;
+    background: none;
+  }
