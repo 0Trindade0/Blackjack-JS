@@ -1,6 +1,6 @@
 @font-face {
     font-family: sigma;
-    src: url();
+    src: url(./folders/fonts/Sigmar-Regular.ttf);
 }
 
 * {
@@ -14,7 +14,21 @@ body {
     flex-direction: column;
     justify-content: space-between; /* Mantém o header no topo e os botões embaixo */
     height: 100vh; /* Garante que ocupe toda a tela */
-    font-family: Arial, sans-serif;
+    font-family: sigma;
+}
+
+#gameMessage {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: red;
+  margin-top: 10px;
+}
+.cards {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  display: inline-block;
+  min-width: 150px;
 }
 
 .header
@@ -23,7 +37,10 @@ body {
     padding: 20px;
     background-color: #333;
     color: white;
-    font-size: 18px;
+    font-size: 30px;
+    font-variation-settings:
+      "XROT" -3,
+      "YROT" 0;
     width: 100%;
 
 }
@@ -44,7 +61,10 @@ body {
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente (caso necessário) */
-   height: 100vh; /* Para centralizar na tela inteira, opcional */
+    height: 100vh; /* Para centralizar na tela inteira, opcional */
+    font-variation-settings:
+    "XROT" -3,
+    "YROT" 0;
 }
 
 .button {
@@ -57,9 +77,12 @@ body {
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    font-family: din-round,sans-serif;
-    font-size: 15px;
+    font-family: sigma;
+    font-size: 25px;
     font-weight: 700;
+    font-variation-settings:
+      "XROT" -3,
+      "YROT" 0;
     letter-spacing: .8px;
     line-height: 20px;
     margin: 0;
