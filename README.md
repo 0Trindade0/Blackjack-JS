@@ -41,4 +41,4 @@ This project is open-source and available under the MIT License.
 
 Feel free to modify or contribute to the project!
 
-I hope this README helps you showcase your project and your journey! Let me know if you need any further tweaks or additions. 😊
+I hope this README helps you showcase your project and your journey! Let me know if you need any further tweaks or additions. 
