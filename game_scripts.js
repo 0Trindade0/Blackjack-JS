@@ -85,14 +85,14 @@ function setupGameControls(callback) {
 
 //Função para exibir as cartas na tela
 function displayHands(playerHand, dealerHand, hideDealerCard = true) {
-    let playerCards = playerHand.map(card => `${card.card} de ${card.suit}`).join(", ");
+    let playerCards = playerHand.map(card => `${card.card} of ${card.suit}`).join(", ");
     let dealerCards = hideDealerCard 
-        ? `${dealerHand[0].card} de ${dealerHand[0].suit}, ??` 
-        : dealerHand.map(card => `${card.card} de ${card.suit}`).join(", ");
+        ? `${dealerHand[0].card} of ${dealerHand[0].suit}, ??` 
+        : dealerHand.map(card => `${card.card} of ${card.suit}`).join(", ");
 
     document.getElementById("playerCards").innerText = `Player Hand: ${playerCards}`;
     document.getElementById("dealerCards").innerText = `Dealer Hand: ${dealerCards}`;
-    document.getElementById("playerScore").innerText = `Player Score: ${handValueCalc(playerHand)}`;
+    document.getElementById("playerScore").innerText = `Player Score: ${hand_value_calc(playerHand)}`;
 }
 
 // Exibir mensagem de resultado
@@ -107,9 +107,11 @@ async function Blackjack() {
     let { player_hand, dealer_hand } = handle_cards(game_deck); //Criar mão do Player e do Dealer 
     let run_game = true; //Variável para manter o jogo rodando
 
-    console.log("\nPlayer Hand:", player_hand);
+    
+    displayHands(player_hand, dealer_hand, true);
+    /*console.log("\nPlayer Hand:", player_hand);
     console.log("Dealer Hand:", dealer_hand[0], "??");//Esconder a segunda carta do dealer
-    console.log("\nPlayer Score:", hand_value_calc(player_hand));
+    console.log("\nPlayer Score:", hand_value_calc(player_hand));*/
 
     function handleAction(action) {
         if (!run_game) return; // Se o jogo já acabou, não faz nada
@@ -117,12 +119,14 @@ async function Blackjack() {
         if (action === 1) {
             // Draw Card: Comprar mais uma carta
             player_hand.push(game_deck.drawCard());
-            console.log("\nPlayer Hand:", player_hand);
-            console.log("\nPlayer Score:", hand_value_calc(player_hand));
+            displayHands(player_hand, dealer_hand, true); // Atualizar na tela
+            /*console.log("\nPlayer Hand:", player_hand);
+            console.log("\nPlayer Score:", hand_value_calc(player_hand));*/
 
             //Verificar se o jogador estourou
             if (hand_value_calc(player_hand) > 21) {
-                console.log("\nYou lose!\n Busted hands.");
+                //console.log("\nYou lose!\n Busted hands.");
+                displayMessage("You loose! Busted hands.");
                 run_game = false;
             }
 
@@ -134,34 +138,57 @@ async function Blackjack() {
                 dealer_total = hand_value_calc(dealer_hand);
             }
 
-            console.log("\nDealer Hand:", dealer_hand);
-            console.log("Dealer Score:", dealer_total);
+            /*console.log("\nDealer Hand:", dealer_hand);
+            console.log("Dealer Score:", dealer_total);*/
+            displayHands(player_hand, dealer_hand, false);
 
             let player_total = hand_value_calc(player_hand);
+            let message = "";
 
             if (dealer_total > 21) {
-                console.log("Dealer busted hands.\n You won!");//Caso Dealer ultrapasse o limite
+                //Caso Dealer ultrapasse o limite
+                //console.log("Dealer busted hands.\n You win!");
+                message = "Dealer busted hands. You Won!";
             } else if (dealer_total > player_total) {
-                console.log("Dealer won."); //Caso Dealer tenha a maior mão
+                //Caso Dealer tenha a maior mão
+                //console.log("Dealer won."); 
+                message = "Dealer Won.";
             } else if (dealer_total < player_total) {
-                console.log("You win."); //Caso você tenha a maior mão
+                //Caso você tenha a maior mão
+                //console.log("You win."); 
+                message = "You win!";
             } else {
-                console.log("Draw."); //Empate
+                //Empate
+                //console.log("Draw."); 
+                message = "Draw!";
             }
+            displayMessage(message);
             run_game = false;
 
         } else if (action === 3) {
             // Forfeit: Desistir do jogo
-            console.log("Você desistiu do jogo!");
+            displayMessage("You forfeit the game!");
             run_game = false;
         } else {
-            console.log("Ação inválida! Tente novamente.");//Caso usuário coloque algum caracter inválido.
+            displayMessage("Invalid action! Try again.");//Caso usuário coloque algum caracter inválido.
         }
     }
-
     // Configurar os botões para enviar as ações ao jogo
     setupGameControls(handleAction);
 }
+
+function restartGame() {
+    // Limpa todas as mensagens e cartas na tela
+    document.getElementById("playerCards").innerText = "Player Hand: ";
+    document.getElementById("dealerCards").innerText = "Dealer Hand: ";
+    document.getElementById("playerScore").innerText = "Player Score: ";
+    document.getElementById("gameMessage").innerText = "";
+
+    // Chama a função Blackjack novamente para começar um novo jogo
+    Blackjack();
+}
+// Adiciona evento ao botão de reinício
+document.getElementById("restart").addEventListener("click", restartGame);
 
 // Iniciar o jogo
 Blackjack();

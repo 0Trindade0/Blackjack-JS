@@ -13,14 +13,16 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Mantém o header no topo e os botões embaixo */
-    height: 100vh; /* Garante que ocupe toda a tela */
+    height: 100vh; /* Garante que ocupe toda a tela */  
     font-family: sigma;
+    color: #cdcdcd;
+    background: #333;
 }
 
 #gameMessage {
   font-size: 1.5em;
   font-weight: bold;
-  color: red;
+  color: rgb(156, 5, 5);
   margin-top: 10px;
 }
 .cards {
@@ -35,12 +37,9 @@ body {
 {
     text-align: center;
     padding: 20px;
-    background-color: #333;
+    background-color: #003502;
     color: white;
     font-size: 30px;
-    font-variation-settings:
-      "XROT" -3,
-      "YROT" 0;
     width: 100%;
 
 }
@@ -69,7 +68,7 @@ body {
 
 .button {
     appearance: button;
-    background-color: #1899D6;
+    background-color: #089329;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
@@ -103,7 +102,7 @@ body {
   
   .button:after {
     background-clip: padding-box;
-    background-color: #1CB0F6;
+    background-color: #14c343;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
