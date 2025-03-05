@@ -1,6 +1,6 @@
 Welcome to the Blackjack Web Game repository! 🎮🃏
 
-This project is the result of my first-ever web development course in college, completed during my first period. It marks the beginning of my journey into coding and development, and I'm excited to share it with you. This simple yet engaging game implements the classic Blackjack game mechanics, fully built with HTML, CSS, and JavaScript.
+This project is the result of my web development course in college, made for my first semester project. It marks the beginning of my journey into coding and development, and I'm excited to share it with you. This simple yet engaging game implements the classic Blackjack game mechanics, fully built with HTML, CSS, and JavaScript.
 
 🚀 Features
 Classic Blackjack Mechanics: Play the popular card game with the traditional rules.
