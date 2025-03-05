@@ -33,9 +33,6 @@ This project is the first web development project I created in my first semester
 
 📥 How to Run Locally
 Clone this repository to your local machine:
-bash
-Copiar
-Editar
 git clone https://github.com/yourusername/blackjack-web-game.git
 Open the index.html file in your web browser.
 Start playing the game! 🎉
