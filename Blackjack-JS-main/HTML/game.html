@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Blackjack</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../CSS/main.css'>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Blackjack WEB Project</h1>
+    </header>
+
+    <div id="order_cards">
+        <div id="dealer" class="cards">
+            <h2>Dealer</h2>
+            <p id="dealerCards">Mão do Dealer: </p>
+        </div>
+
+        <div id="player" class="cards">
+            <h2>Player</h2>
+            <p id="playerCards">Mão do Jogador: </p>
+            <p id="playerScore">Pontuação do Jogador: </p>
+        </div>
+    </div>
+
+    <p id="gameMessage">Game Message</p>
+
+    <div class="button-container">
+        <button id="drawCard" class="button">Draw Card</button>
+        <button id="endBet" class="button">End Bet</button>
+        <button id="forfeit" class="button">Forfeit</button>
+        <button id="restart" class="button">New Game</button>
+    </div>
+
+</body>
+<script src='../JS/main.js'></script>
+<script src='../JS/game_scripts.js'></script>
+
+</html>

@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tilt+Warp&display=swap');
+
+@font-face {
+    font-family: 'intro';
+    src: url(introheadr-base.otf);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #order_cards2 {
+        grid-template-columns: 1fr;
+        /* Stack cards vertically */
+    }
+}
+
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis globais */
+:root {
+    --back: #0B0B0C;
+    --cor1: #F4EAB9;
+    --cor2: #A57202;
+}
+
+/* Estilização do corpo */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    font-family: 'intro';
+    color: var(--cor1);
+    background-color: var(--back);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container das cartas */
+#order_cards2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    justify-items: center;
+    margin: 60px;
+}
+
+/* Estilização individual das cartas */
+.cards2 {
+    position: relative;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    color: #740000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    height: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Texto da carta (naipes e valores) */
+.suit {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+}
+
+.card_value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.suit2 {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 30px;
+}
+
+/* Efeito hover nas cartas */
+.cards2:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Container do botão */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+}
+
+/* Botão */
+.button {
+    appearance: button;
+    background-color: #089329;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: sigma;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    padding: 13px 16px;
+    text-align: center;
+    transition: filter .2s;
+    width: 15%;
+}
+
+.button:hover:not(:disabled) {
+    filter: brightness(1.1);
+}
+
+.button:disabled {
+    cursor: auto;
+}
+
+.button:active {
+    border-width: 4px 0 0;
+    background: none;
+}
